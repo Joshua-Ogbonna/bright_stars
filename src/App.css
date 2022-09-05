@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  color: #a1a0a0;
+}
+li {
+  font-family: "Open Sans", sans-serif;
+  color: #a1a0a0;
+  font-size: 15px;
+}
+.casual__button,
+.dashboard__button {
+  background: #0baf61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.casual__button {
+  padding: 15px 30px;
+}
+.dashboard__button {
+  padding: 10px 20px;
+}
+.dashboard__h5 {
+  font-size: 17px;
+}
+.section__three h3,
+.section__description h3,
+.fourth__section h3 {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+.auth__button {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: #0baf61;
+  border: none;
+  color: #fff;
+}
+ul {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.sidebar__heading,
+.section__container {
+  padding: 30px 20px 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dashboard Main Styles */
+.section__container h3 {
+  font-size: 20px;
+  margin-bottom: 50px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.edit__student, .delete__student {
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.edit__student {
+  color: #0baf61;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete__student {
+  color: rgb(109, 13, 13);
 }

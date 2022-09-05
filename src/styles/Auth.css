@@ -1,0 +1,58 @@
+.auth__section {
+  display: flex;
+  justify-content: space-between;
+}
+.auth__section .side__auth,
+.auth__section .form__section,
+.admin__side {
+  width: 50%;
+  height: 100vh;
+}
+.auth__section .side__auth {
+  background-image: url("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRlYWNoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60");
+  padding: 100px;
+}
+.auth__section .admin__side {
+  background-image: url("https://media.istockphoto.com/photos/teaching-and-technology-picture-id1340543907?b=1&k=20&m=1340543907&s=170667a&w=0&h=apo6jLzNsK0BdKVHOqSF9kAg-YLCNxSDEc7IULcUw5A=");
+}
+.auth__section .side__auth,
+.auth__section .admin__side {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.auth__section .side__auth i {
+  font-size: 100px;
+  color: #e8efff;
+  margin: 20px 0;
+}
+.auth__section .side__auth img {
+  width: 300px;
+  margin: 50px 0;
+}
+
+/* Forms */
+.login__form {
+  width: 500px;
+  margin: 150px auto;
+}
+.login__form h3 {
+  font-size: 22px;
+}
+.login__form p {
+  font-size: 14px;
+}
+.login__form label, .form__group label {
+  width: 100%;
+  margin: 20px 0 5px;
+}
+.login__form input, .form__group input, .form__group input[type="date"], .form__group select {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #a1a0a0;
+  outline: 0;
+}
+.login__form input:focus-visible {
+  border: 1px solid #a1a0a0;
+  outline: 0;
+}

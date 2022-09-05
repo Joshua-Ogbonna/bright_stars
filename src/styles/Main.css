@@ -1,0 +1,93 @@
+.carousel-inner {
+  height: 100vh;
+}
+.home__hero .carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+.home__hero .carousel-caption h1 {
+  font-size: 100px;
+  font-weight: 800;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: none;
+}
+
+/* Chid care */
+.section__two {
+  display: flex;
+  padding: 100px;
+  align-items: center;
+}
+.section__two img {
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+}
+.section__image,
+.section__description {
+  width: 50%;
+}
+
+.section__description h3 {
+  width: 500px;
+}
+.section__description p {
+  font-size: 16px;
+  width: 600px;
+  line-height: 30px;
+  margin: 20px 0;
+}
+
+/* Choosing us */
+.section__three {
+  padding: 100px;
+  background-color: #e8efff;
+  text-align: center;
+}
+.section__three .choice__cards {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+.section__three .choice__cards .choice__card {
+  width: 30%;
+}
+.section__three .choice__cards .choice__card i {
+  color: #fff;
+  padding: 12px 10px;
+  background-color: #5e4fc3;
+  border-radius: 99px;
+}
+.section__three .choice__cards .choice__card h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+.section__three .choice__cards .choice__card p {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+/* Joining us */
+.fourth__section {
+    text-align: center;
+    padding: 100px;
+}
+
+/* Footer section */
+.footer__section {
+    padding: 20px 100px;
+    background: #e8efff;
+    text-align: center;
+}
+.footer__section h5 {
+    font-size: 15px;
+    color: #a1a0a0;
+}

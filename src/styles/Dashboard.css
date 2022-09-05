@@ -1,0 +1,110 @@
+.admin__dashboard {
+  display: flex;
+}
+.admin__dashboard .sidebar {
+    width: 20%;
+    height: 100vh;
+}
+.admin__dashboard .main__dashboard {
+  width: 80%;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar__section {
+    height: 100%;
+}
+
+.sidebar__section .sidebar__links ul {
+  padding-left: 0;
+}
+.sidebar__section .sidebar__links ul li {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.sidebar__section .sidebar__links ul li i {
+  margin-right: 20px;
+}
+.active__item {
+  color: #5e4fc3;
+  font-weight: 700;
+  /* border-left: 1px solid #5e4fc3; */
+}
+
+/* Dashboard main styles */
+.statistics__cards {
+  display: flex;
+  justify-content: space-between;
+}
+.statistics__cards .statistics__card {
+  width: 33%;
+  /* height: 300px; */
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 0;
+}
+.statistics__cards .statistics__card h5, .container__hero h5 {
+  font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+}
+.statistics__cards .students__stats {
+  background: #5e4fc3;
+}
+.statistics__cards .teachers__stats {
+  background: #0baf61;
+}
+.statistics__cards .term__stats {
+  background: #F58840;
+}
+
+/* Admin Student Style */
+.student__lists .list__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.student__information {
+  margin-top: 50px;
+}
+.student__information h5 {
+  font-size: 15px;
+}
+
+/* Student */
+.container__hero {
+  background: #5e4fc3;
+  border-radius: 5px;
+}
+.container__hero p {
+  color: rgb(216, 215, 215);
+  font-weight: 800;
+}
+
+.student__head {
+  display: flex;
+  align-items: center;
+  background-color: #5e4fc3;
+  color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}
+.student__head i {
+  font-size: 100px;
+}
+.student__head h5 {
+  font-size: 30px;
+}
+.activity__tab {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin-top: 50px;
+}
+.activity__tab div {
+  cursor: pointer;
+}
