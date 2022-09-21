@@ -28,7 +28,16 @@ const allSubjects = [
   "Computer Studies",
   "Basic Science",
   "Basic Language",
-  "Music"
+  "Music",
+  "Prevocational Studies",
+  "Cultural and creative arts",
+  "History",
+  "French",
+  "National values",
+  "Business studies ",
+  "Animal husbandry",
+  "Geography ",
+  "Food and nutrition",
 ];
 
 const PostResults = ({ id }) => {
