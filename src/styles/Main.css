@@ -25,7 +25,6 @@
   align-items: center;
 }
 
-
 .section__two h5 {
   width: 500px;
 }
@@ -34,7 +33,8 @@
   width: 700px;
   line-height: 30px;
 }
-.section__two h5, .section__two p {
+.section__two h5,
+.section__two p {
   margin: 20px auto;
   text-align: center;
 }
@@ -98,8 +98,76 @@
 .about__component .section {
   padding: 20px 100px;
 }
-.about__component .section p, .about__component .section ul li {
+.about__component .section p,
+.about__component .section ul li {
   color: #000;
   font-size: 15px;
   line-height: 30px;
+}
+
+/* Contact component */
+.contact__component .contact__section {
+  padding: 50px 100px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+.contact__component .contact__section .contact__form {
+  width: 600px;
+}
+.contact__component .contact__section .form__area textarea {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: 0;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .home__hero {
+    padding: 200px 20px 100px;
+    height: 70vh;
+  }
+  .home__hero h1 {
+    width: 100%;
+    font-size: 40px;
+  }
+  .home__hero p {
+    font-size: 20px;
+  }
+  .section__two,
+  .section__three,
+  .footer__section, .fourth__section {
+    padding: 100px 20px;
+  }
+  .section__two h5,
+  .section__two p {
+    width: 100%;
+  }
+  .section__three h3, .fourth__section h3 {
+    font-size: 20px;
+  }
+  .section__three .choice__cards {
+    flex-direction: column;
+  }
+  .section__three .choice__cards .choice__card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .application__container {
+    padding: 100px 20px;
+  }
+  .contact__component .contact__section {
+    padding: 100px 20px;
+    flex-direction: column;
+  }
+  .contact__component .contact__section .contact__form {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .about__component .section {
+    padding: 50px 20px;
+  }
 }

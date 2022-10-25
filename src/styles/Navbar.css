@@ -27,6 +27,9 @@ nav .brand div p {
   font-style: italic;
   font-weight: 600;
 }
+nav .menu {
+  display: none;
+}
 nav .links ul {
   display: flex;
   align-items: center;
@@ -39,4 +42,46 @@ nav .links ul li a {
   font-size: 14px;
   color: var(--white-color);
   font-weight: 600;
+}
+.offcanvas-header {
+  width: 100%;
+}
+.offcanvas-header h5 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.offcanvas-header h5 i {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 10px 20px;
+  }
+  nav .links {
+    display: none;
+  }
+  nav .menu {
+    display: block;
+  }
+  .offcanvas.show nav {
+    padding: 0;
+    flex-direction: column;
+  }
+  .offcanvas.show nav .links {
+    display: block;
+  }
+  .offcanvas.show nav .links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .offcanvas-show nav .links ul li {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
 }

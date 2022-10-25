@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import Student from "../images/student.svg";
-import { backendLocal, backendURL } from "../utils/links";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import ReactLoading from "react-loading";
 import { getStudent } from "../app/studentReducer/actions";
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom'
+
+import { backendLocal } from "../utils/links";
 
 const Login = () => {
   const [student, setStudent] = useState({

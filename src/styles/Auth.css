@@ -56,3 +56,18 @@
   border: 1px solid #a1a0a0;
   outline: 0;
 }
+
+@media (max-width: 1000px) {
+  .auth__section {
+    padding:  20px;
+  }
+  .auth__section .side__auth {
+    display: none;
+  }
+  .auth__section .form__section {
+    width: 100%;
+  }
+  .login__form {
+    width: 100%;
+  }
+}
