@@ -31,6 +31,9 @@ import AdminResults from "./components/AdminDashboard/AdminResults";
 import Transcripts from "./components/studentDashboard/Transcripts";
 import Complaints from "./components/studentDashboard/Complaints";
 import StudentSingle from "./components/AdminDashboard/StudentSingle";
+import Admissions from "./views/Admissions";
+import About from "./views/About";
+import Contact from "./views/Contact";
 
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admissions" element={<Admissions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route element={<PublicUser />}>
             <Route path="/login" element={<Login />} />
           </Route>
@@ -59,7 +65,7 @@ function App() {
             <Route path="/dashboard" element={<StudentDashboard />}>
               <Route path="" element={<StudentIndex />} />
               <Route path="results" element={<Results />} />
-              <Route path="transcripts" element={<Transcripts/>} />
+              <Route path="transcripts" element={<Transcripts />} />
               <Route path="complaints" element={<Complaints />} />
             </Route>
           </Route>

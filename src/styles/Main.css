@@ -1,49 +1,42 @@
-.carousel-inner {
+.home__hero {
+  background: url("https://images.unsplash.com/photo-1599725427295-6ed79ff8dbef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  padding: 200px 100px;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* text-align: center; */
 }
-.home__hero .carousel-caption {
-  position: absolute;
-  right: 15%;
-  bottom: 20rem;
-  left: 15%;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  color: #fff;
-  text-align: center;
+.home__hero h1 {
+  color: var(--white-color);
+  font-size: 70px;
+  width: 800px;
+  font-weight: 700;
 }
-.home__hero .carousel-caption h1 {
-  font-size: 100px;
-  font-weight: 800;
-}
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  display: none;
+.home__hero p {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--white-color);
 }
 
 /* Chid care */
 .section__two {
-  display: flex;
+  /* display: flex; */
   padding: 100px;
   align-items: center;
 }
-.section__two img {
-  border-radius: 100%;
-  width: 400px;
-  height: 400px;
-}
-.section__image,
-.section__description {
-  width: 50%;
-}
 
-.section__description h3 {
+
+.section__two h5 {
   width: 500px;
 }
-.section__description p {
+.section__two p {
   font-size: 16px;
-  width: 600px;
+  width: 700px;
   line-height: 30px;
-  margin: 20px 0;
+}
+.section__two h5, .section__two p {
+  margin: 20px auto;
+  text-align: center;
 }
 
 /* Choosing us */
@@ -67,27 +60,46 @@
   border-radius: 99px;
 }
 .section__three .choice__cards .choice__card h5 {
-    font-size: 16px;
-    margin: 20px 0;
+  font-size: 16px;
+  margin: 20px 0;
 }
 .section__three .choice__cards .choice__card p {
-    font-size: 14px;
-    line-height: 25px;
+  font-size: 14px;
+  line-height: 25px;
 }
 
 /* Joining us */
 .fourth__section {
-    text-align: center;
-    padding: 100px;
+  text-align: center;
+  padding: 100px;
 }
 
 /* Footer section */
 .footer__section {
-    padding: 20px 100px;
-    background: #e8efff;
-    text-align: center;
+  padding: 20px 100px;
+  background: #e8efff;
+  text-align: center;
 }
 .footer__section h5 {
-    font-size: 15px;
-    color: #a1a0a0;
+  font-size: 15px;
+  color: #a1a0a0;
+}
+
+/* Admissions */
+.application__container {
+  padding: 100px;
+}
+.application__container ul li {
+  line-height: 30px;
+  color: #000;
+}
+
+/* About Container */
+.about__component .section {
+  padding: 20px 100px;
+}
+.about__component .section p, .about__component .section ul li {
+  color: #000;
+  font-size: 15px;
+  line-height: 30px;
 }

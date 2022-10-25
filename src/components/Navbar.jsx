@@ -1,67 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <i className="fa-solid fa-graduation-cap"></i>{" "}
-            <div className="school__name">
-              <h5>BrightStars</h5>
-              <p>International School</p>
-            </div>
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/about-us">
-                  About Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/contact-us">
-                  Contact Us
-                </Link>
-              </li>
-              <div className="second__layer">
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    aria-current="page"
-                    to="/admissions"
-                  >
-                    Admissions
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/login">
-                    Student Login
-                  </Link>
-                </li>
-              </div>
-            </ul>
-          </div>
+    <nav>
+      <div className="brand">
+        <i className="fa-solid fa-sun"></i>
+        <div onClick={() => navigate("/")}>
+          <h5>BSISS</h5>
+          <p>...knowledge is power</p>
         </div>
-      </nav>
-    </div>
+      </div>
+      <div className="links">
+        <ul>
+          <li onClick={() => navigate("/about")}>
+            <Link to="">About Us</Link>
+          </li>
+          <li onClick={() => navigate("/contact")}>
+            <Link to="">Contact Us</Link>
+          </li>
+          <li onClick={() => navigate("/admissions")}>
+            <Link to="">Admissions</Link>
+          </li>
+          <li onClick={() => navigate("/login")}>
+            <Link to="">Student Login</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 

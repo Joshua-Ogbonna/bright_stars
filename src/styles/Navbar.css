@@ -1,45 +1,42 @@
-.navbar {
-  padding: 20px 100px;
-  background: #e8efff;
-}
-.navbar .navbar-brand, .sidebar__heading {
+nav {
+  padding: 10px 100px;
+  background: var(--primary-color);
+  color: var(--white-color);
   display: flex;
-  /* align-items: center; */
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
 }
-.navbar .navbar-brand .school__name, .sidebar__heading .school__name {
+nav .brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+nav .brand i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+nav .brand div h5 {
+  line-height: 20px;
+  margin-top: 10px;
+}
+nav .brand div p {
+  line-height: 0;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 600;
+}
+nav .links ul {
+  display: flex;
+  align-items: center;
+}
+nav .links ul li {
+  list-style: none;
   margin-left: 20px;
 }
-.navbar .navbar-brand h5, .sidebar__heading h5 {
-  font-size: 24px;
-  font-weight: 700;
-}
-.navbar .navbar-brand .school__name p, .sidebar__heading p {
-  line-height: 0px;
+nav .links ul li a {
   font-size: 14px;
-}
-.navbar-brand i, .sidebar__heading i {
-  font-size: 40px;
-}
-.navbar-brand i,
-.navbar-brand .school__name h5, .sidebar__heading i, .sidebar__heading h5 {
-  color: #5e4fc3;
-}
-.navbar ul li {
-  margin-right: 20px;
-}
-.navbar .second__layer {
-  display: flex;
-  margin-left: 100px;
-}
-.navbar .second__layer .admissions__button,
-.navbar .second__layer .login__button {
-  padding: 15px 30px;
-  border-radius: 99px;
-}
-.navbar .second__layer .admissions__button {
-  border: 1px solid #979697;
-}
-.navbar .second__layer .login__button, .navbar .second__layer .login__button:hover {
-  background: #0baf61;
-  color: #fff;
+  color: var(--white-color);
+  font-weight: 600;
 }

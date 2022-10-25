@@ -21,8 +21,8 @@ li {
 }
 .casual__button,
 .dashboard__button {
-  background: #0baf61;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white-color);
   border: none;
   border-radius: 5px;
 }
@@ -47,9 +47,9 @@ li {
   width: 100%;
   margin: 20px 0;
   padding: 10px 20px;
-  background: #0baf61;
+  background: var(--primary-color);
   border: none;
-  color: #fff;
+  color: var(--white-color);
 }
 ul {
   margin: 0;
@@ -73,7 +73,7 @@ a {
   cursor: pointer;
 }
 .edit__student {
-  color: #0baf61;
+  color: var(--primary-color);
 }
 .delete__student {
   color: rgb(109, 13, 13);

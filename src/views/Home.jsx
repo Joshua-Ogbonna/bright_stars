@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Carousel } from "react-bootstrap";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
@@ -9,60 +10,21 @@ const Home = () => {
       <Navbar />
 
       {/* Home Hero */}
-      <div className="home__hero">
-        <Carousel fade>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://media.istockphoto.com/photos/little-kids-schoolchildren-pupils-students-running-hurrying-to-the-picture-id1338737959?b=1&k=20&m=1338737959&s=170667a&w=0&h=Wj4IEck0-UYQquyOfnORvotapuarDJ4fABPDm-9ITV0="
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h1>Qualitative Education</h1>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGlnaCUyMHNjaG9vbCUyMGNoaWxkcmVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-              alt="Second slide"
-            />
-
-            <Carousel.Caption>
-              <h1>Education in Sound, Godly Environment</h1>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://media.istockphoto.com/photos/teenager-girl-during-homeschooling-picture-id1307257555?b=1&k=20&m=1307257555&s=170667a&w=0&h=SfC1sK8aLtsWp8jUvglBRWSTr09G0LCokKx22HlBgq4="
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h1>Modern Facilities for Enhancing Quality Education</h1>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </div>
+      <Hero />
 
       {/* School Description */}
       <div className="section__two">
-        <div className="section__image">
-          <img
-            src="https://media.istockphoto.com/photos/shot-of-a-little-girl-relaxing-and-drawing-picture-id1369523463?b=1&k=20&m=1369523463&s=170667a&w=0&h=Na05OrUVzRzPon5WXliG6vTf2FntOW_l4toygy-ac28="
-            alt="Child care"
-          />
-        </div>
-        <div className="section__description">
-          <h3>Child Care at its Best</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-            quaerat modi voluptates placeat veniam ducimus? Blanditiis rem,
-            quidem asperiores ipsam temporibus quibusdam? Dignissimos, magni
-            qui?
-          </p>
-          <button className="casual__button">Talk to Us</button>
-        </div>
+        <h5>We Are BRIGHT STARS</h5>
+        <p>
+          The quest to enhance individual use of inherent potentials maximally
+          and preparation of every learner morally, ethically and academically
+          to be creative and self reliant in performance of worthy tasks for
+          societal upliftment stood as the motivating factor towards the
+          establishment of this school. April 2008 specifically was the date
+          Brightstars Int'l School was born. The founder operationally referred
+          to as the Diector/CEO, Dr. Maximus C. Osigwe heads the entire
+          Brightstars Organization.
+        </p>
       </div>
 
       {/* Why choose us */}
