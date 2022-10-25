@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import ReactLoading from "react-loading";
 import { useNavigate } from "react-router-dom";
+import { useToasts } from "react-toast-notifications";
 
-import { backendLocal, backendURL } from "../../../utils/links";
+import { backendURL } from "../../../utils/links";
+import styles from "../../../styles/results.module.css";
 
 const allSubjects = [
   "English",
@@ -58,11 +60,18 @@ const PostResults = ({ id }) => {
   const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { addToast } = useToasts();
 
   const handleAddSubjects = () => {
     if (!subject.subject || !subject.ca || !subject.exam) {
       alert("set subject details");
       return;
+    }
+    for (let i = 0; i < subjects.length; ++i) {
+      if (subjects[i].subject === subject.subject) {
+        alert("Subject already recorded");
+        return;
+      }
     }
     setSubjects((subjects) => [...subjects, subject]);
     setSubject({ subject: "", ca: "", exam: "" });
@@ -86,12 +95,21 @@ const PostResults = ({ id }) => {
     try {
       const response = await axios.post(`${backendURL}/result/${id}`, data);
       console.log(response.data);
+      addToast(response.data.message, { appearance: "success" });
       setLoading(false);
       navigate("/admin/students");
     } catch (error) {
       console.log(error.response);
       setLoading(false);
     }
+  };
+
+  const removeSubject = (name) => {
+    const filterSubjects = subjects.filter(
+      (subject) => subject.subject !== name
+    );
+    console.log(filterSubjects);
+    return setSubjects(filterSubjects);
   };
 
   return (
@@ -224,6 +242,24 @@ const PostResults = ({ id }) => {
             <button onClick={handleAddSubjects}>Add Subject</button>
           </div>
         </div>
+
+        {/* Subjects added  */}
+        {subjects?.map((subject, idx) => (
+          <div className={`${styles.subjects} shadow`}>
+            <div className={styles.subject}>
+              <div>{subject?.subject}</div>
+              <div>{subject?.ca}</div>
+              <div>{subject?.exam}</div>
+              <div>{Number(subject?.ca) + Number(subject?.exam)}</div>
+              <div style={{ cursor: "pointer" }}>
+                <i
+                  className="bx bx-trash"
+                  onClick={() => removeSubject(subject?.subject)}
+                ></i>
+              </div>
+            </div>
+          </div>
+        ))}
 
         {/* Student Information */}
         <div className="student__information">

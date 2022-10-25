@@ -7,7 +7,6 @@ const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("Dashboard");
   const status = sessionStorage.getItem("status");
   const dispatch = useDispatch()
-  console.log(status);
 
   const handleActiveLink = (link) => {
     setActiveLink(link);
@@ -72,7 +71,7 @@ const Sidebar = () => {
               </Link>
               <li
                 className={handleLinkClass("")}
-                onClick={() => handleActiveLink("")}
+                onClick={() => dispatch(logout())}
               >
                 <i className="fa-solid fa-arrow-right-from-bracket"></i> Logout
               </li>

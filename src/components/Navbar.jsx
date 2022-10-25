@@ -44,7 +44,7 @@ const Navbar = () => {
               <div className="second__layer">
                 <li className="nav-item">
                   <Link
-                    className="nav-link admissions__button"
+                    className="nav-link"
                     aria-current="page"
                     to="/admissions"
                   >
@@ -52,11 +52,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link login__button"
-                    aria-current="page"
-                    to="/login"
-                  >
+                  <Link className="nav-link" aria-current="page" to="/login">
                     Student Login
                   </Link>
                 </li>

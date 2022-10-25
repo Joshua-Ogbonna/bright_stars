@@ -96,7 +96,7 @@ const Login = () => {
           <div className="form__group">
             <button className="auth__button">
               {loading ? (
-                <ReactLoading type="spin" color="#fff" with={30} height={30} />
+                <ReactLoading type="spin" color="#fff" width={30} height={30} />
               ) : (
                 "Login"
               )}

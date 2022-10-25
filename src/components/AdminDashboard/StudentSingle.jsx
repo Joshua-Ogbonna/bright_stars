@@ -9,9 +9,25 @@ import "./StudentComponents/StudentComponents.css";
 
 const StudentSingle = () => {
   const [loading, setLoading] = useState(false);
-  const [student, setStudent] = useState({});
+  const [student, setStudent] = useState({
+    name: "",
+    gender: "",
+    address: "",
+    dateOfBirth: "",
+    LGA: "",
+    state: "",
+    bloodGroup: "",
+    regNo: "",
+    nationality: "",
+    telephone: "",
+    nameOfParents: "",
+    addressOfParents: "",
+    intendedClass: "",
+    paidFees: null
+  });
   const [error, setError] = useState({});
   const [activeTab, setActiveTab] = useState("Information");
+  const [showEditForm, setShowEditForm] = useState(false);
 
   const { id } = useParams();
 
@@ -31,6 +47,7 @@ const StudentSingle = () => {
   const handleChangeActiveTab = (tab) => {
     setActiveTab(tab);
   };
+  const handleShowEditForm = () => setShowEditForm(!showEditForm);
 
   useEffect(() => {
     handleFetchSingleStudent();
@@ -54,24 +71,23 @@ const StudentSingle = () => {
         <div onClick={() => handleChangeActiveTab("Post Result")}>
           Post Result
         </div>
-        <div onClick={() => handleChangeActiveTab("Edit Student")}>
-          Edit Student
+        <div
+          onClick={() => {
+            handleChangeActiveTab("Edit Student");
+            handleShowEditForm();
+          }}
+        >
+          {showEditForm ? "Close Edit" : "Edit Student"}
         </div>
       </div>
 
       {activeTab === "Information" && (
-        <Information
-          address={student.address}
-          LGA={student.LGA}
-          state={student.state}
-          gender={student.gender}
-          dateOfBirth={student.dateOfBirth}
-          parents={student.nameOfParents}
-          telephone={student.telephone}
-          bloodGroup={student.bloodGroup}
-        />
+        <Information student={student} editForm={showEditForm} />
       )}
       {activeTab === "Post Result" && <PostResults id={student.regNo} />}
+      {activeTab === "Edit Student" && (
+        <Information student={student} editForm={showEditForm} />
+      )}
     </div>
   );
 };

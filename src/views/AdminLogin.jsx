@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { backendURL } from "../utils/links";
 import { toast, ToastContainer } from "react-toastify";
+import { useToasts } from "react-toast-notifications";
+import ReactLoading from "react-loading";
+
+import { backendURL } from "../utils/links";
 
 const AdminLogin = () => {
   const [admin, setAdmin] = useState({ adminID: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const { addToast } = useToasts();
 
   const handleAdminLogin = async (e) => {
     e.preventDefault();
@@ -12,16 +17,20 @@ const AdminLogin = () => {
       toast.error("Incomplete details");
       return;
     }
-
+    setLoading(true);
     await axios
       .post(`${backendURL}/admin-login`, admin)
       .then((response) => {
         console.log(response.data);
-        sessionStorage.setItem("status", "admin")
-        window.location.reload()
+        sessionStorage.setItem("status", "admin");
+        sessionStorage.setItem("user", JSON.stringify(response.data));
+        setLoading(false);
+        window.location.reload();
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err.response.data);
+        addToast(err.response.data, { appearance: "error" });
       });
   };
   return (
@@ -62,7 +71,18 @@ const AdminLogin = () => {
               />
             </div>
             <div className="form__group">
-              <button className="auth__button">Login</button>
+              <button className="auth__button">
+                {loading ? (
+                  <ReactLoading
+                    type="spin"
+                    color="#fff"
+                    width={30}
+                    height={30}
+                  />
+                ) : (
+                  "Login"
+                )}
+              </button>
             </div>
           </form>
         </div>

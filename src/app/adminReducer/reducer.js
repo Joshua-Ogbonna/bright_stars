@@ -1,6 +1,7 @@
 const initialState = {
   students: [],
   teachers: [],
+  user: sessionStorage.getItem("user") && JSON.parse(sessionStorage.getItem("user"))
 };
 
 export const adminReducer = (state = initialState, action) => {

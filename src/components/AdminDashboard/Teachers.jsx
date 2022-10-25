@@ -2,34 +2,55 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { backendURL } from "../../utils/links";
 import { Table } from "react-bootstrap";
+import ReactLoading from "react-loading";
+import { useDispatch } from "react-redux";
+import { useToasts } from "react-toast-notifications";
+
+import { getTeachers } from "../../app/adminReducer/actions";
 
 const Teachers = () => {
   const [teacherForm, setTeacherForm] = useState(false);
   const [teacherList, setTeachers] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [teacherData, setTeacherData] = useState({
     name: "",
-    dateJoined: Date.now(),
+    dateJoined: "",
     dateOfBirth: "",
     address: "",
     phoneNumber: "",
-    emailAddress: "",
+    email: "",
     stateOfOrigin: "",
     picture: "",
     class: "",
     designation: "",
     section: "",
-    subject: "",
+    subjects: "",
   });
+  const dispatch = useDispatch();
+  const { addToast } = useToasts();
 
-  const handleSetTeacherForm = () => {
-    setTeacherForm(!teacherForm);
+  const handleSetTeacherForm = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.post(`${backendURL}/teacher`, teacherData);
+      console.log(data);
+      console.log(teacherData);
+      setTeacherForm(!teacherForm);
+      setLoading(false);
+      dispatch(getTeachers());
+    } catch (error) {
+      setLoading(false);
+      // console.log(error.response);
+      addToast(error.response.data.message, { appearance: "error" });
+    }
   };
+
+  const handleShowForm = () => setTeacherForm(!teacherForm);
 
   const handleGetTeacher = () => {
     axios
       .get(`${backendURL}/teacher`)
       .then((response) => {
-        console.log(response.data);
         setTeachers(response.data);
       })
       .catch((err) => {
@@ -44,7 +65,7 @@ const Teachers = () => {
     <div className="section__container">
       <h3>Bright Teachers</h3>
       {!teacherForm && (
-        <button className="casual__button" onClick={handleSetTeacherForm}>
+        <button className="casual__button" onClick={handleShowForm}>
           Add Teacher
         </button>
       )}
@@ -110,11 +131,11 @@ const Teachers = () => {
                 type="email"
                 name="email address"
                 placeholder="teacher@bright.com"
-                value={teacherData.emailAddress}
+                value={teacherData.email}
                 onChange={(e) =>
                   setTeacherData({
                     ...teacherData,
-                    emailAddress: e.target.value,
+                    email: e.target.value,
                   })
                 }
               />
@@ -135,23 +156,70 @@ const Teachers = () => {
               />
             </div>
             <div className="col-lg-6">
-              <label htmlFor="class">Class (If primary section)</label>
-              <select
-                name="class"
-                value={teacherData.class}
+              <label htmlFor="date joined">Date Joined</label>
+              <input
+                type="date"
+                value={teacherData.dateJoined}
                 onChange={(e) =>
-                  setTeacherData({ ...teacherData, class: e.target.value })
+                  setTeacherData({ ...teacherData, dateJoined: e.target.value })
+                }
+              />
+            </div>
+            <div className="col-lg-6">
+              <label htmlFor="section">Section</label>
+              <select
+                name="section"
+                value={teacherData.section}
+                onChange={(e) =>
+                  setTeacherData({ ...teacherData, section: e.target.value })
                 }
               >
-                <option hidden>Choose Class</option>
-                <option value="Primary 1">Primary 1</option>
-                <option value="Primary 2">Primary 2</option>
-                <option value="Primary 3">Primary 3</option>
-                <option value="Primary 4">Primary 4</option>
-                <option value="Primary 5">Primary 5</option>
-                <option value="Primary 6">Primary 6</option>
+                <option hidden selected>
+                  Choose a Section
+                </option>
+                <option value="Secondary">Secondary</option>
+                <option value="Primary">Primary</option>
+                <option value="Nursery">Nursery</option>
               </select>
             </div>
+            {teacherData.section === "Secondary" && (
+              <div className="col-lg-6">
+                <label htmlFor="Subject">
+                  Subject Specialisation (For staff in secondary)
+                </label>
+                <input
+                  type="text"
+                  name="subjects"
+                  placeholder="User a comma if handling more than 1 subject"
+                  value={teacherData.subjects}
+                  onChange={(e) =>
+                    setTeacherData({ ...teacherData, subjects: e.target.value })
+                  }
+                />
+              </div>
+            )}
+            {teacherData.section === "Primary" && (
+              <div className="col-lg-6">
+                <label htmlFor="class">Class (If primary section)</label>
+                <select
+                  name="class"
+                  value={teacherData.class}
+                  onChange={(e) =>
+                    setTeacherData({ ...teacherData, class: e.target.value })
+                  }
+                >
+                  <option hidden selected>
+                    Choose Class
+                  </option>
+                  <option value="Primary 1">Primary 1</option>
+                  <option value="Primary 2">Primary 2</option>
+                  <option value="Primary 3">Primary 3</option>
+                  <option value="Primary 4">Primary 4</option>
+                  <option value="Primary 5">Primary 5</option>
+                  <option value="Primary 6">Primary 6</option>
+                </select>
+              </div>
+            )}
             <div className="col-lg-6">
               <label
                 htmlFor="designation"
@@ -173,39 +241,14 @@ const Teachers = () => {
                 <option value="Principal">Principal</option>
               </select>
             </div>
-            <div className="col-lg-6">
-              <label htmlFor="section">Section</label>
-              <select
-                name="section"
-                value={teacherData.section}
-                onChange={(e) =>
-                  setTeacherData({ ...teacherData, section: e.target.value })
-                }
-              >
-                <option hidden>Choose a Section</option>
-                <option value="Secondary">Secondary</option>
-                <option value="Primary">Primary</option>
-                <option value="Nursery">Nursery</option>
-              </select>
-            </div>
-            <div className="col-lg-6">
-              <label htmlFor="Subject">
-                Subject Specialisation (For staff in secondary)
-              </label>
-              <input
-                type="text"
-                name="subjects"
-                placeholder="User a comma if handling more than 1 subject"
-                value={teacherData.subject}
-                onChange={(e) =>
-                  setTeacherData({ ...teacherData, subject: e.target.value })
-                }
-              />
-            </div>
           </div>
           <div className="form__group mt-3">
             <button className="casual__button" onClick={handleSetTeacherForm}>
-              Save Teacher
+              {loading ? (
+                <ReactLoading color="#fff" type="spin" width={30} height={30} />
+              ) : (
+                "Add Teacher"
+              )}
             </button>
           </div>
         </>
@@ -235,7 +278,7 @@ const Teachers = () => {
                   <td>{teacher.dateOfBirth}</td>
                   <td>{teacher.designation}</td>
                   <td>{teacher.class}</td>
-                  <td>{teacher.subject}</td>
+                  <td>{teacher.subjects}</td>
                   <td></td>
                 </tr>
               ))}
