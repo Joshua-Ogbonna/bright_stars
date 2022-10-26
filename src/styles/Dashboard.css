@@ -108,3 +108,29 @@
 .activity__tab div {
   cursor: pointer;
 }
+
+/* Media queries */
+@media (max-width: 1280px) {
+  .admin__dashboard .sidebar  {
+    display: none;
+  }
+  .admin__dashboard .main__dashboard {
+    width: 100%;
+  }
+  .statistics__cards {
+    flex-direction: column;
+  }
+  .statistics__cards .statistics__card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .open__icon {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+  }
+  .activity__tab {
+    overflow-x: auto;
+    width: 100%;
+  }
+}

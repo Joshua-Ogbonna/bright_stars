@@ -36,11 +36,7 @@ const AdminLogin = () => {
   return (
     <div>
       <div className="auth__section">
-        <div className="admin__side">
-          {/* <i className="fa-solid fa-graduation-cap"></i>{" "}
-      <h3>Journey to Greatness</h3> */}
-          {/* <img src={Student} alt="Student avatar" /> */}
-        </div>
+        <div className="admin__side"></div>
         <div className="form__section">
           <form onSubmit={handleAdminLogin} action="" className="login__form">
             <h3>Login to Admin Portal</h3>

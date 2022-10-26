@@ -256,7 +256,7 @@ const Teachers = () => {
 
       {!teacherForm && teacherList.length > 0 ? (
         <>
-          <Table className="mt-4">
+          <Table className="mt-4" responsive>
             <thead>
               <tr>
                 <th></th>

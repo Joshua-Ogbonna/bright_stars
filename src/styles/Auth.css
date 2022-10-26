@@ -61,7 +61,8 @@
   .auth__section {
     padding:  20px;
   }
-  .auth__section .side__auth {
+  .auth__section .side__auth,
+  .auth__section .admin__side {
     display: none;
   }
   .auth__section .form__section {

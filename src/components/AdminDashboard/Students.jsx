@@ -26,7 +26,7 @@ const Students = () => {
           </Link>
         </div>
         <div className="student__list">
-          <Table>
+          <Table responsive>
             <thead>
               <tr>
                 <th></th>
