@@ -15,6 +15,9 @@ const user =
 axios.defaults.baseURL = backendURL;
 axios.defaults.headers.common["user-id"] = user?._id;
 
+
+console.log(user)
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

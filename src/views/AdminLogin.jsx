@@ -23,7 +23,7 @@ const AdminLogin = () => {
       .then((response) => {
         console.log(response.data);
         sessionStorage.setItem("status", "admin");
-        sessionStorage.setItem("user", JSON.stringify(response.data));
+        sessionStorage.setItem("user", JSON.stringify(response.data.admin));
         setLoading(false);
         window.location.reload();
       })
