@@ -1,2 +1,2 @@
-export const backendURL = "https://safe-beach-39480.herokuapp.com/api";
+export const backendURL = "https://jungle-green-fawn-toga.cyclic.app/api";
 export const backendLocal = "http://localhost:40000/api"
